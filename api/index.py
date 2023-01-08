@@ -112,7 +112,6 @@ def send_to_wecom_file(base64_content, file_name, wecom_cid, wecom_aid, wecom_se
 class handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
-        # 修改为公司ID
         wecom_id = os.getenv("wecom_id")
         request_body = self.rfile.read(int(self.headers['content-length'])).decode('utf-8')
         path = str(self.path)
@@ -151,7 +150,7 @@ class handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(response.encode('utf-8'))
             return
-            # 获取发送的用户
+
         wecom_touid = input_json.get('uid', '@all')
 
         logging.info("wecom_touid: " + str(wecom_touid))
