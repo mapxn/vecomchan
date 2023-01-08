@@ -26,12 +26,12 @@ You need redeploy your project and waiting for the Environment Variables take ef
 
 POST the following content to the public network access address of the function in json format.
 
-| column | description                      | is necessary              |
-|--------|----------------------------------|---------------------------|
-| key    | 设置的 sendkey                      | yes                       |
-| type   | text, image, markdown or file    | no, default value was `text` |
-| msg    | 消息主体(需要推送的文本或图片/文件的 Base64 编码)   | yes                       |
-| uid    | user id, it looks like `zhangsan\|lisi\|wangwu` | no, the default value is `@all` |
+| column | description                                                       | is necessary              |
+|--------|-------------------------------------------------------------------|---------------------------|
+| key    | your sendkey                                                      | yes                       |
+| type   | text, image, markdown or file                                     | no, default value was `text` |
+| msg    | Message body (Base64 encoding of text or image/file to be pushed) | yes                       |
+| uid    | user id, it looks like `zhangsan\                                 |lisi\|wangwu` | no, the default value is `@all` |
 
 Example:
 
