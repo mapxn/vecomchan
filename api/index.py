@@ -120,7 +120,7 @@ class handler(BaseHTTPRequestHandler):
         logging.info("request body: " + request_body)
         logging.info("path_info: " + path)
 
-        if path == "/api/":
+        if path == "/api" or path == "/api/" or path == "/api/index":
             send_key = os.getenv("send_key")
             wecom_agentid = os.getenv("wecom_agentid")
             wecom_secret = os.getenv("wecom_secret")
