@@ -12,9 +12,15 @@ Deploy your own vercel project with Vercel.
 |No.|Name|Value                       |
 |:---|:---|:--------------------------|
 |1|wecom_id| your corp id             |
-|2|send_key| your send key,customlized|
-|3|wecom_agentid| your AgentId        |
-|4|wecom_secret| your Secret          |
+|2|app_1| your app name, customelize|
+|3|send_key_1| your send key,customlized|
+|4|wecom_agentid_1| your AgentId        |
+|5|wecom_secret_1| your Secret          |
+|6|...| ...|
+|7|app_7| your app name, customelize|
+|8|send_key_7| your send key,customlized|
+|9|wecom_agentid_7| your AgentId        |
+|10|wecom_secret_7| your Secret         |
 
 ## Redeploy your project
 You need redeploy your project and waiting for the Environment Variables take effect.
@@ -28,6 +34,7 @@ POST the following content to the public network access address of the function 
 
 | column | description                                                       | is necessary              |
 |--------|-------------------------------------------------------------------|---------------------------|
+| app    | your app name                                                     | yes                       | 
 | key    | your sendkey                                                      | yes                       |
 | type   | text, image, markdown or file                                     | no, default value is `text` |
 | msg    | Message body (Base64 encoding of text or image/file to be pushed) | yes                       |
@@ -36,19 +43,20 @@ POST the following content to the public network access address of the function 
 Example:
 
 ```
-{"key":"123", "msg": "Hello, World!"}
+{"app":"test", "key":"123", "msg": "Hello, World!"}
 ```
 
 ```
-{"key":"123", "msg": "Hello, World!", "uid": "zhangsan"}
+{"app":"test", "key":"123", "msg": "Hello, World!", "uid": "zhangsan"}
 ```
 
 ```
-{"key":"123", "type": "markdown", "msg": "**Markdown Here!**"}
+{"app":"test", "key":"123", "type": "markdown", "msg": "**Markdown Here!**"}
 ```
 
 ```
 {
+    "app": "test",
     "key": "123",
     "type": "text",
     "msg": "Support<a href=\"https://www.baidu.com\">hyperlink</a>"
