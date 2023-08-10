@@ -132,7 +132,9 @@ class handler(BaseHTTPRequestHandler):
         try:
             input_json = json.loads(request_body)
 
-            if input_json['app'] == None:
+            try:
+                app = input_json['app']
+            except KeyError as e:
                 status = '403 Forbidden'
                 response = '{"code": -7, "msg": "No app specified,please select an app"}'
                 self.send_response(403)
