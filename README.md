@@ -6,7 +6,7 @@ The wecomchan project running on vercel serverless function.
 
 Deploy your own vercel project with Vercel.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/mapxn/vercel-wecomchan)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/mapxn/vecomchan)
 
 ## Add your custom Environment Variables
 |No.|Name|Value                       |
@@ -41,6 +41,42 @@ POST the following content to the public network access address of the function 
 | uid    | user id, it looks like `zhangsan\|lisi\|wangwu`                   | no, the default value is `@all` |
 
 Example:
+
+Curl:
+```bash
+curl --silent --location 'https://your-custom.domain.com/api/' \
+--header 'Content-Type: application/json' \
+--data '{
+    "app": "app1",
+    "key": "abcdefg1234",
+    "type": "text",
+    "msg": "CURL test!"
+}'
+```
+
+Python:
+```python
+import requests
+import json
+
+url = "https://vechat.txwd.eu.org/api/"
+
+payload = json.dumps({
+  "app": "app1",
+  "key": "abcdefg1234",
+  "type": "text",
+  "msg": "Python test!"
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+Various type of data that you can have a try:
 
 ```
 {"app":"test", "key":"123", "msg": "Hello, World!"}
