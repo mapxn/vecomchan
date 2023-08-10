@@ -121,8 +121,8 @@ class handler(BaseHTTPRequestHandler):
 
         if path == "/api/daily" or path == "/api/daily/" or path == "/api/daily/index":
             send_key = os.getenv("send_key_daily")
-            wecom_agentid = os.getenv("wecom_agentid_daliy")
-            wecom_secret = os.getenv("wecom_secret_daliy")
+            wecom_agentid = os.getenv("wecom_agentid_daily")
+            wecom_secret = os.getenv("wecom_secret_daily")
         else:
             response = '{"code": -6, "msg": "invalid path info"}'
             self.send_response(403)
