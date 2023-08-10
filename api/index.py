@@ -173,7 +173,8 @@ class handler(BaseHTTPRequestHandler):
                 wecom_secret = os.getenv("wecom_secret_7")
             else:
                 status = '403 Forbidden'
-                response = f'{"code": -8, "msg": "No app [{app}] found, please select the correct app."}'
+                msg = f"No app [{app}] found, please select the correct app."
+                response = f'{"code": -8, "msg": msg}'
                 self.send_response(403)
                 self.send_header('Content-type', 'text/json')
                 self.end_headers()
