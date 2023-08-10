@@ -136,44 +136,44 @@ class handler(BaseHTTPRequestHandler):
                 app = input_json['app']
             except KeyError as e:
                 status = '403 Forbidden'
-                response = '{"code": -7, "msg": "No app specified,please select an app"}'
+                response = '{"code": -7, "msg": "No app specified,please select an app first"}'
                 self.send_response(403)
                 self.send_header('Content-type', 'text/json')
                 self.end_headers()
                 self.wfile.write(response.encode('utf-8'))
                 return
             
-            if input_json['app'] == os.getenv("app_1"):
+            if app == os.getenv("app_1"):
                 send_key = os.getenv("send_key_1")
                 wecom_agentid = os.getenv("wecom_agentid_1")
                 wecom_secret = os.getenv("wecom_secret_1")
-            elif input_json['app'] == os.getenv("app_2"):
+            elif app == os.getenv("app_2"):
                 send_key = os.getenv("send_key_2")
                 wecom_agentid = os.getenv("wecom_agentid_2")
                 wecom_secret = os.getenv("wecom_secret_2")
-            elif input_json['app'] == os.getenv("app_3"):
+            elif app == os.getenv("app_3"):
                 send_key = os.getenv("send_key_3")
                 wecom_agentid = os.getenv("wecom_agentid_3")
                 wecom_secret = os.getenv("wecom_secret_3")
-            elif input_json['app'] == os.getenv("app_4"):
+            elif app == os.getenv("app_4"):
                 send_key = os.getenv("send_key_4")
                 wecom_agentid = os.getenv("wecom_agentid_4")
                 wecom_secret = os.getenv("wecom_secret_4")
-            elif input_json['app'] == os.getenv("app_5"):
+            elif app == os.getenv("app_5"):
                 send_key = os.getenv("send_key_5")
                 wecom_agentid = os.getenv("wecom_agentid_5")
                 wecom_secret = os.getenv("wecom_secret_5")
-            elif input_json['app'] == os.getenv("app_6"):
+            elif app == os.getenv("app_6"):
                 send_key = os.getenv("send_key_6")
                 wecom_agentid = os.getenv("wecom_agentid_6")
                 wecom_secret = os.getenv("wecom_secret_6")
-            elif input_json['app'] == os.getenv("app_7"):
+            elif app == os.getenv("app_7"):
                 send_key = os.getenv("send_key_7")
                 wecom_agentid = os.getenv("wecom_agentid_7")
                 wecom_secret = os.getenv("wecom_secret_7")
             else:
                 status = '403 Forbidden'
-                response = '{"code": -8, "msg": "No app founded,please select the right app."}'
+                response = f'{"code": -8, "msg": "No app [{app}] found, please select the correct app."}'
                 self.send_response(403)
                 self.send_header('Content-type', 'text/json')
                 self.end_headers()
