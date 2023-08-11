@@ -122,7 +122,7 @@ class handler(BaseHTTPRequestHandler):
         if path == "/api" or path == "/api/" or path == "/api/index":
             print("api路径正确")
         else:
-            response = '{"code": -6, "msg": "invalid path info"}'
+            response = '{"code": -6, "msg": "invalid path info."}'
             self.send_response(403)
             self.send_header('Content-type', 'text/json')
             self.end_headers()
@@ -136,7 +136,7 @@ class handler(BaseHTTPRequestHandler):
                 app = input_json['app']
             except KeyError as e:
                 status = '403 Forbidden'
-                response = '{"code": -7, "msg": "No app specified,please select an app first"}'
+                response = '{"code": -7, "msg": "No app specified, please select an app first."}'
                 self.send_response(403)
                 self.send_header('Content-type', 'text/json')
                 self.end_headers()
@@ -190,7 +190,7 @@ class handler(BaseHTTPRequestHandler):
 
             if input_json['key'] != send_key:
                 status = '403 Forbidden'
-                response = '{"code": -2, "msg": "invalid send key"}'
+                response = '{"code": -2, "msg": "invalid send key."}'
                 self.send_response(403)
                 self.send_header('Content-type', 'text/json')
                 self.end_headers()
@@ -199,7 +199,7 @@ class handler(BaseHTTPRequestHandler):
         except Exception as e:
             logging.exception(e)
             status = '403 Forbidden'
-            response = '{"code": -1, "msg": "invalid json input"}'
+            response = '{"code": -1, "msg": "invalid json input."}'
             self.send_response(403)
             self.send_header('Content-type', 'text/json')
             self.end_headers()

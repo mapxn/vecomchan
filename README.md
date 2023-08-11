@@ -1,10 +1,10 @@
-# Vercel wecomchan
+# Vecomchan
 
-The wecomchan project running on vercel serverless function.
+The wecomchan running on vercel serverless function.
 
 ## Deploy Your Own
 
-Deploy your own vercel project with Vercel.
+Deploy your own Vecomchan with Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/mapxn/vecomchan)
 
@@ -17,10 +17,10 @@ Deploy your own vercel project with Vercel.
 |4|wecom_agentid_1| your AgentId        |
 |5|wecom_secret_1| your Secret          |
 |6|...| ...|
-|7|app_7| your app name, customelize|
-|8|send_key_7| your send key,customlized|
-|9|wecom_agentid_7| your AgentId        |
-|10|wecom_secret_7| your Secret         |
+|7|app_9| your app name, customelize|
+|8|send_key_9| your send key,customlized|
+|9|wecom_agentid_9| your AgentId        |
+|10|wecom_secret_9| your Secret         |
 
 ## Redeploy your project
 You need redeploy your project and waiting for the Environment Variables take effect.
@@ -44,7 +44,7 @@ Example:
 
 Curl:
 ```bash
-curl --silent --location 'https://your-custom.domain.com/api/' \
+curl --silent --location 'https://your-custom-domain.com/api' \
 --header 'Content-Type: application/json' \
 --data '{
     "app": "app1",
@@ -59,7 +59,7 @@ Python:
 import requests
 import json
 
-url = "https://vechat.txwd.eu.org/api/"
+url = "https://your-custom-domain.com/api"
 
 payload = json.dumps({
   "app": "app1",
