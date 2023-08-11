@@ -171,6 +171,14 @@ class handler(BaseHTTPRequestHandler):
                 send_key = os.getenv("send_key_7")
                 wecom_agentid = os.getenv("wecom_agentid_7")
                 wecom_secret = os.getenv("wecom_secret_7")
+            elif app == os.getenv("app_8"):
+                send_key = os.getenv("send_key_8")
+                wecom_agentid = os.getenv("wecom_agentid_8")
+                wecom_secret = os.getenv("wecom_secret_8")
+            elif app == os.getenv("app_9"):
+                send_key = os.getenv("send_key_9")
+                wecom_agentid = os.getenv("wecom_agentid_9")
+                wecom_secret = os.getenv("wecom_secret_9")
             else:
                 status = '403 Forbidden'
                 response = '{"code": -8, "msg": "No app found, please select the correct app."}'
